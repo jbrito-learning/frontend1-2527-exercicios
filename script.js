@@ -1,21 +1,42 @@
-// Example 1
+// EXAMPLE 1
 
-let jsonString = '{"name": "John", "age": 30, "city": "New York"}';
-let obj = JSON.parse(jsonString);
-console.log(obj);
+// Set Item
+localStorage.setItem("name", "John");
 
-// Example 2
+// Get Item
+let nameString = localStorage.getItem("name");
+console.log(nameString);
 
-let obj2 = {
+// Remove Item
+localStorage.removeItem("name");
+
+// Clear All Items
+localStorage.clear();
+
+// EXAMPLE 2
+
+// Set Item
+sessionStorage.setItem("name", "John");
+
+// Get Item
+let nameString2 = sessionStorage.getItem("name");
+console.log(nameString2);
+
+// Remove Item
+sessionStorage.removeItem("name");
+
+// Clear All Items
+sessionStorage.clear();
+
+// EXAMPLE 3
+
+let user = {
   name: "John",
   age: 30,
   city: "New York",
 };
-let jsonString2 = JSON.stringify(obj2);
-console.log(jsonString2);
 
-// Example 3
+localStorage.setItem("user", JSON.stringify(user));
 
-let data = fetch("data.json")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+let u = JSON.parse(localStorage.getItem("user"));
+console.log(u);
