@@ -159,3 +159,52 @@ main {
   margin-top: 20px;
   padding: 0;
 }
+
+#create-product {
+  margin-bottom: 40px;
+}
+
+#create-product-form {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+
+#create-product input {
+  padding: 10px;
+  border: 1px solid #0f2027;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f2027;
+  max-width: 150px;
+}
+
+#create-product button {
+  padding: 10px;
+  border: 1px solid #0f2027;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0f2027;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.product-actions button {
+  padding: 10px;
+  border: 1px solid #0f2027;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0f2027;
+}
