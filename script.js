@@ -1,47 +1,31 @@
-// Exemplo 1
+const API_URL = "https://69de7ffdd6de26e1192801dd.mockapi.io/";
 
-let dataArray = ["english", "portuguese", "spanish", "french", "german"];
-localStorage.setItem("languages", JSON.stringify(dataArray));
+async function getProducts() {
+  try {
+    const response = await fetch(`${API_URL}/products`);
+    const data = await response.json();
 
-let arrayObject = JSON.parse(localStorage.getItem("languages"));
-console.log(arrayObject[0]);
+    const productList = document.getElementById("product-list");
+    productList.innerHTML = "";
 
-// Exemplo 2
+    data.forEach((product) => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("product-card");
+      productCard.innerHTML = `
+        <img class="product-image" src="${product.image}" alt="${product.name}">
+        <div class="product-content">
+        <div class="product-category">${product.category}</div>
+        <h2 class="product-name">${product.name}</h2>
+        <p class="product-description">${product.description}</p>
+        <div class="product-price">${product.price} €</div>
+        </div>
+      `;
+      productList.appendChild(productCard);
+    });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return [];
+  }
+}
 
-let user = {
-  name: "John",
-  grades: [10, 9, 8, 7, 6],
-  info: {
-    age: 20,
-    city: "New York",
-  },
-};
-
-localStorage.setItem("user", JSON.stringify(user));
-
-let userObject = JSON.parse(localStorage.getItem("user"));
-console.log(userObject.grades[0]);
-
-// Exemplo 3
-
-window.addEventListener("storage", (event) => {
-  console.log("Chave alterada: " + event.key);
-  console.log("Novo valor: " + event.newValue);
-  console.log("Valor anterior: " + event.oldValue);
-});
-
-// Exemplo 4
-let password = "batatas";
-let encryptedPassword = btoa(password);
-console.log(encryptedPassword);
-let decryptedPassword = atob(encryptedPassword);
-console.log(decryptedPassword);
-
-// Exemplo 5
-let secretKey = "babatasfritascomarroz";
-let encrypted = CryptoJS.AES.encrypt(password, secretKey).toString();
-console.log(encrypted);
-let decrypted = CryptoJS.AES.decrypt(encrypted, secretKey).toString(
-  CryptoJS.enc.Utf8,
-);
-console.log(decrypted);
+getProducts();
