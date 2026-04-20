@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <my-navbar></my-navbar>
+    <my-element>
+      <slot name="name">John Doe</slot>
+    </my-element>
+    <p>Texto fora do shadow DOM</p>
+    <my-element2></my-element2>
+
+    <user-card>
+      <p slot="name">John Doe</p>
+      <p slot="age">20</p>
+    </user-card>
+
+    <!-- Templates -->
+
+    <template id="user-card-template">
+      <style>
+        .user-card {
+          color: red;
+        }
+      </style>
+      <div class="user-card">
+        <slot name="name">John Doe</slot>
+        <slot name="age">20</slot>
+      </div>
+    </template>
+  </body>
+  <script src="script.js"></script>
+</html>
