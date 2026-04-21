@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <section
+      id="splide-slides"
+      class="splide"
+      aria-label="Splide Basic HTML Example"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img
+              style="width: 100%; height: 100%; object-fit: cover"
+              src="https://picsum.photos/1550/500"
+              alt="Slide 01"
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              style="width: 100%; height: 100%; object-fit: cover"
+              src="https://picsum.photos/1500/500"
+              alt="Slide 02"
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              style="width: 100%; height: 100%; object-fit: cover"
+              src="https://picsum.photos/1600/500"
+              alt="Slide 03"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="todo-list">
+      <h1>Todo List</h1>
+      <div class="todo-list-container">
+        <input type="text" id="todo-input" placeholder="Add a new todo" />
+        <button id="add-todo-button">Add</button>
+      </div>
+      <ul id="todo-list">
+        <li class="todo-item">
+          Todo 1<button onclick="deleteTodo(1)" class="delete-todo-button">
+            Delete
+          </button>
+        </li>
+        <li class="todo-item">
+          Todo 2<button onclick="deleteTodo(2)" class="delete-todo-button">
+            Delete
+          </button>
+        </li>
+        <li class="todo-item">
+          Todo 3<button onclick="deleteTodo(3)" class="delete-todo-button">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>
