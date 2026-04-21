@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tododledoo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="app-panel" aria-labelledby="app-title">
+        <div class="app-header">
+          <p class="eyebrow">Mini projeto Frontend</p>
+          <h1 id="app-title">Tododledoo</h1>
+          <p class="app-subtitle">Organiza as tuas tarefas de forma simples.</p>
+        </div>
+
+        <form class="todo-form" id="todo-form">
+          <label class="sr-only" for="todo-input">Nova tarefa</label>
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            maxlength="80"
+            placeholder="Escreve uma nova tarefa..."
+            autocomplete="off"
+            required
+          />
+          <button class="primary-button" type="submit">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span>Adicionar</span>
+          </button>
+        </form>
+
+        <div class="list-header">
+          <h2>Tarefas</h2>
+          <p id="todo-count">0 tarefas</p>
+        </div>
+
+        <p class="empty-state" id="empty-state">Ainda não tens tarefas.</p>
+        <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+</html>
